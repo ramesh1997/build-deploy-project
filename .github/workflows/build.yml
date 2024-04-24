@@ -1,10 +1,16 @@
+name: Node Continuous integration
 on: push
 jobs: 
   first-job: 
     runs-on: ubuntu-latest
     steps: 
       - run: node --version
+        name: Check Node verion
       - run: npm --version
+        name: Check npm --version
       - uses: actions/checkout@v4
+        name: Checkout code from github
       - run: npm install
+        name: Install NPM packages
       - run: node app.js
+        name: Run Node apllication
