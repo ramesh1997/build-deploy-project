@@ -11,15 +11,5 @@ jobs:
         run: node --version
       - name: create txt file
         run: |
-          echo "hello world" > "${{github.workspace }}/data.txt"
+          echo "hello world"
           ls -la
-          cat "${{github_workspace }}/data.txt"
-
-  second-job:
-    runs-on: ubuntu-latest
-    needs: first-job
-    steps: 
-      - name: print the data 
-        run: |
-          ls -la
-          cat "${{github.workspace }}/data.txt"
