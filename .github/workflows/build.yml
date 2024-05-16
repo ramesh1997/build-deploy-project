@@ -1,6 +1,6 @@
 name: testing workspace usage
 'on': 
-  push
+  push:
   workflow_dispatch:
   
 jobs: 
