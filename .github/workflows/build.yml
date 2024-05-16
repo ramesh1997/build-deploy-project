@@ -10,7 +10,7 @@ jobs:
         name: Check Node verion
       - name: create txt file
         run: |
-          echo "hello world" >> "${{github_workplace }}/data.txt"
+          echo "hello world" >> "${{github.workspace }}/data.txt"
           ls -la
           cat "${{github_workplace }}/data.txt"
 
@@ -20,7 +20,7 @@ jobs:
     steps: 
       - run: |
           ls -la
-          cat "${{github_workplace }}/data.txt"
+          cat "${{github.workspace }}/data.txt"
         name: print the data 
     
     
