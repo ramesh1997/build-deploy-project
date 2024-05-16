@@ -1,4 +1,4 @@
-name: Node Continuous integration
+name: testing workspace usage
 on: 
   workflow_dispatch:
   
@@ -12,7 +12,7 @@ jobs:
         run: |
           echo "hello world" >> "${{github.workspace }}/data.txt"
           ls -la
-          cat "${{github_workplace }}/data.txt"
+          cat "${{github_workspace }}/data.txt"
 
   second-job:
     runs-on: ubuntu-latest
