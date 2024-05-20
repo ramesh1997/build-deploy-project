@@ -12,17 +12,17 @@ jobs:
     steps:
       - shell: bash
         run: |
-          mkdir -p /github/workspace/coverage/${{ matrix.subset }} 
+          mkdir -p /coverage/${{ matrix.subset }} 
           mkdir -p /test_coverage
           cd test_coverage
           expr 3 + 7 > math-homework.txt
           cd ..
-          cp -R test_coverage/math-homework.txt /github/workspace/coverage/${{ matrix.subset }}   # Move coverage report to shared directory
+          cp -R test_coverage/math-homework.txt /coverage/${{ matrix.subset }}   # Move coverage report to shared directory
       - name: Upload math result for job 1
         uses: actions/upload-artifact@v4
         with:
           name: homework_pre
-          path: /github/workspace/coverage/${{ matrix.subset }}/math-homework.txt
+          path: /coverage/${{ matrix.subset }}/math-homework.txt
   job_2:
     name: Multiply by 9
     needs: cypress_tests
