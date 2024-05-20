@@ -31,7 +31,8 @@ jobs:
       - name: Download math result for job 1
         uses: actions/download-artifact@v4
         with:
-          name: homework_pre
+          pattern: coverage/*
+          merge-multiple: true
       - shell: bash
         run: |
           ls -la
