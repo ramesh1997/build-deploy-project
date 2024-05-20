@@ -36,5 +36,6 @@ jobs:
       - shell: bash
         run: |
           ls -la
+          cd 1
           value=`cat math-homework.txt`
           expr $value \* 9 > math-homework.txt
