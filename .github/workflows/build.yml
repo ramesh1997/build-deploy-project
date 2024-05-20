@@ -4,7 +4,7 @@ on: [push]
 
 jobs:
   cypress_tests:
-    runs-on: ubuntu
+    runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
@@ -26,7 +26,7 @@ jobs:
   job_2:
     name: Multiply by 9
     needs: cypress_tests
-    runs-on: ubuntu
+    runs-on: ubuntu-latest
     steps:
       - name: Download math result for job 1
         uses: actions/download-artifact@v4
