@@ -1,13 +1,11 @@
 name: Share data between jobs
 
 on:
-  pull_request:
-    types: [synchronize]
   issue_comment:
 
 jobs:
   cypress_tests:
-    if: github.event_name == 'pull_request' && contains(github.event.pull_request.body, 'test this please')
+    if: github.event.comment.body == 'test this please'
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
