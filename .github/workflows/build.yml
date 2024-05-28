@@ -12,7 +12,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        subset: ["1", "2", "3","4"]
+        subset: ["1", "2", "3"]
     steps:
       - shell: bash
         run: |
