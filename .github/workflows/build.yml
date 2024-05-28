@@ -2,7 +2,7 @@ name: Share data between jobs
 
 on:
   issue_comment:
-
+    types: [created]
 jobs:
   cypress_tests:
     if: github.event.comment.body == 'test this please'
