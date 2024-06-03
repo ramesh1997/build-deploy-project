@@ -1,8 +1,9 @@
 name: Share data between jobs
 
 on:
+  pull_request:
+    types: [synchronize]
   issue_comment:
-    types: [created]
 jobs:
   cypress_tests:
     if: contains(github.event.comment.body, 'run automation tests')
