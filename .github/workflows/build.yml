@@ -1,7 +1,8 @@
 name: Share data between jobs
 
 on:
-  issue_comment:
+  pull_request:
+    types: [synchronize]
 
 jobs:
   cypress_tests:
