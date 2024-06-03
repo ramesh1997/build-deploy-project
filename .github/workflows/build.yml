@@ -3,7 +3,7 @@ name: Share data between jobs
 on:
   pull_request:
     types: [synchronize]
-
+  issue_comment:
 jobs:
   cypress_tests:
     if: contains(github.event.comment.body, 'run automation tests')
@@ -11,7 +11,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        subset: ["1", "2", "3","4"]
+        subset: ["1", "2", "3"]
     steps:
       - shell: bash
         run: |
